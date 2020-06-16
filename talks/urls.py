@@ -5,5 +5,5 @@ from . import views
 
 # https://docs.djangoproject.com/en/3.0/ref/urls/#django.urls.path
 urlpatterns = [
-    path("", views.list_view, name="talk-list"),
+    path("", views.talk_list_view, name="talk-list"),
 ]

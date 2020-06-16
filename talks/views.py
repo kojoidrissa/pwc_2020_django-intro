@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render # NOQA
 # https://docs.djangoproject.com/en/3.0/topics/http/shortcuts/
 
 from .models import Talk
 
 
-def list_view(request):
+def talk_list_view(request):
     """Create a list of all talks."""
     # https://docs.djangoproject.com/en/3.0/topics/db/queries/#retrieving-all-objects
     talk_list = Talk.objects.all()
