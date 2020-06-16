@@ -1,1 +1,11 @@
-Hello
+{% block title %}<h1>Lightning ⚡️ Talks</h1>{% endblock %}
+
+{% block content %}
+
+<ul>
+{% for talk in talk_list %}
+    <li>{{ talk.talk_title }}: {{ talk.twitter_handle }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}
