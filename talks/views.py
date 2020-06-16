@@ -14,6 +14,7 @@ def talk_list_view(request):
 
 def talk_detail_view(request, id):
     """Return single talk."""
+    # https://docs.djangoproject.com/en/3.0/topics/db/queries/#retrieving-a-single-object-with-get
     single_talk = Talk.objects.get(id=id)
     context = {"talk": single_talk, }
     return render(request, "talks/talk_detail.html", context)

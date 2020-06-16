@@ -1,1 +1,10 @@
-I AM A SINGLE TALK!
+{% block title %}<h1>Lightning ⚡️ Talk Details</h1>{% endblock %}
+
+{% block content %}
+
+<h3>{{ talk.talk_title }}</h3>
+<p> By {{ talk.personal_name }} {{ talk.family_name }}</p>
+
+<p> <a href="{% url 'talk-list' %}"> Back to ⚡️Talks list </a> </p>
+
+{% endblock %}
