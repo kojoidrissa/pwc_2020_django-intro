@@ -1,4 +1,4 @@
-from django.shortcuts import render # NOQA
+from django.shortcuts import get_object_or_404,render # NOQA
 # https://docs.djangoproject.com/en/3.0/topics/http/shortcuts/
 
 from .models import Talk
@@ -15,6 +15,7 @@ def talk_list_view(request):
 def talk_detail_view(request, id):
     """Return single talk."""
     # https://docs.djangoproject.com/en/3.0/topics/db/queries/#retrieving-a-single-object-with-get
-    single_talk = Talk.objects.get(id=id)
+    # V2: https://docs.djangoproject.com/en/3.0/topics/http/shortcuts/#get-object-or-404 # NOQA
+    single_talk = get_object_or_404(Talk, id=id)
     context = {"talk": single_talk, }
     return render(request, "talks/talk_detail.html", context)
