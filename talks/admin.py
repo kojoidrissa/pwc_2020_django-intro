@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Talk
+
+# https://docs.djangoproject.com/en/3.0/ref/contrib/admin/#modeladmin-objects
+
+
+admin.site.register(Talk)
