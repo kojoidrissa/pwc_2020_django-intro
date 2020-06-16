@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # https://docs.djangoproject.com/en/3.0/ref/models/fields/#field-types
 
@@ -23,3 +24,8 @@ class Talk(models.Model):
         null=True,
         help_text="This is optional. Leave the field blank, or enter your handle without the @ symbol."
     )
+
+    # https://docs.djangoproject.com/en/3.0/ref/models/instances/#get-absolute-url
+    def get_absolute_url(self):
+        """Return the canonical URL for an instance."""
+        return reverse("talk-detail", kwargs={"id": self.id})

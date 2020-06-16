@@ -4,7 +4,7 @@
 
 <ul>
 {% for talk in talk_list %}
-    <li>{{ talk.talk_title }}: {{ talk.twitter_handle }}</a></li>
+    <li><a href="{{ talk.get_absolute_url }}">{{ talk.talk_title }}</a>: {{ talk.twitter_handle }}</li>
 {% endfor %}
 </ul>
 
