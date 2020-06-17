@@ -1,7 +1,18 @@
 from django.shortcuts import get_object_or_404,render # NOQA
 # https://docs.djangoproject.com/en/3.0/topics/http/shortcuts/
 
+from django.views.generic import TemplateView
+
 from .models import Talk
+
+
+class HomepageView(TemplateView):
+    """
+    Our default homepage for PWC Intro to Django Tutorial.
+    It is NOT fancy.
+    """
+
+    template_name = "homepage.html"
 
 
 def talk_list_view(request):
